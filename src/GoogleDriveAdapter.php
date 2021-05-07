@@ -523,6 +523,7 @@ class GoogleDriveAdapter extends AbstractAdapter
 
         if ($meta !== false) {
             return [
+                'id'        => $meta['id'],
                 'path'      => $meta['path'],
                 'filename'  => $meta['filename'],
                 'extension' => $meta['extension']
@@ -546,6 +547,7 @@ class GoogleDriveAdapter extends AbstractAdapter
             $this->cacheObjects([$itemId => $folder]);
             $path_parts = $this->splitFileExtension($name);
             $result = [
+                'id'        => $itemId,
                 'path'      => Util::normalizeDirname($pdir).'/'.($this->useDisplayPaths ? $name : $itemId),
                 'filename'  => $path_parts['filename'],
                 'extension' => $path_parts['extension']
