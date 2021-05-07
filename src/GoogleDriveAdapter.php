@@ -1022,7 +1022,8 @@ class GoogleDriveAdapter extends AbstractAdapter
 
             $result['path'] = $result['virtual_path'];
         }
-
+        
+        $result['full_virtual_path'] = $this->root . '/' . $result['virtual_path'];
         $result['filename'] = $path_parts['filename'];
         $result['extension'] = $path_parts['extension'];
         $result['timestamp'] = strtotime($object->getModifiedTime());
